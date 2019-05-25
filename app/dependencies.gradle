@@ -1,0 +1,142 @@
+ext {
+    versions = [
+            androidx     : "1.0.0",
+            moshi        : "1.8.0",
+            okHttp       : "3.14.2",
+            retrofit     : '2.5.0',
+            dagger       : '2.22.1',
+            rxKotlin     : '2.3.0',
+            rxAndroid    : '2.1.1',
+            rxPermissions: '0.9.4@aar',
+            traceur      : '1.0.1',
+            stetho       : '1.5.1',
+            timber       : '4.7.1',
+            glide        : '4.9.0',
+            sherlock     : '1.0.4@aar',
+
+            espresso     : '3.1.0',
+            testRunner   : '1.1.0',
+            hamcrest     : '2.1',
+            restMock     : '0.3.3',
+            mockito      : '2.23.4',
+            junit        : '4.12',
+            robolectric  : '4.2.1',
+            assertj      : '1.2.0',
+            // LeakCanary 1.6 and higher has problem with Robolectric tests
+            // https://github.com/square/leakcanary/issues/143
+            leakcanary   : '1.5.4',
+            stethOkhttp  : '1.5.1',
+            multiDex     : '2.0.1',
+            mockitoKotlin: '2.1.0'
+    ]
+
+    mockito = [mockito: "org.mockito:mockito-core:$versions.mockito"]
+    junit = [junit: "junit:junit:$versions.junit"]
+    restMock = [restMock: "com.github.andrzejchm.RESTMock:android:$versions.restMock"]
+
+    androixDeps = [
+            cardView         : "androidx.cardview:cardview:$versions.androidx",
+            appcompatV7      : "androidx.appcompat:appcompat:$versions.androidx",
+            design           : "com.google.android.material:material:$versions.androidx",
+            recyclerView     : "androidx.recyclerview:recyclerview:$versions.androidx",
+            supportAnnotation: "androidx.annotation:annotation:$versions.androidx",
+            gridLayout       : "androidx.gridlayout:gridlayout:$versions.androidx",
+            multiDex         : "androidx.multidex:multidex:$versions.multiDex",
+            constraintlayout : "androidx.constraintlayout:constraintlayout:2.0.0-alpha2"
+    ]
+
+    rxJava = [
+            rxKotlin     : "io.reactivex.rxjava2:rxkotlin:$versions.rxKotlin",
+            rxAndroid    : "io.reactivex.rxjava2:rxandroid:$versions.rxAndroid",
+            traceur      : "com.tspoon.traceur:traceur:$versions.traceur",
+            rxRermissions: "com.tbruyelle.rxpermissions:rxpermissions:$versions.rxPermissions"
+    ]
+
+    retrofit = [
+            retrofit      : "com.squareup.retrofit2:retrofit:$versions.retrofit",
+            rxAdapter     : "com.squareup.retrofit2:adapter-rxjava2:$versions.retrofit",
+            moshiConverter: "com.squareup.retrofit2:converter-moshi:$versions.retrofit",
+    ]
+
+    moshi = [
+            moshi: "com.squareup.moshi:moshi-kotlin:$versions.moshi"
+    ]
+
+    okHttp = [
+            logger: "com.squareup.okhttp3:logging-interceptor:3.14.2",
+            okhttp: "com.squareup.okhttp3:okhttp:$versions.okHttp",
+            stetho: "com.facebook.stetho:stetho-okhttp3:$versions.stetho"
+    ]
+
+    firebase = [
+            crash            : "com.google.firebase:firebase-crash:16.2.1",
+            firebaseCore     : "com.google.firebase:firebase-core:16.0.9",
+            firebaseMessaging: "com.google.firebase:firebase-messaging:18.0.0"
+    ]
+
+
+    onlyDebug = [
+            chuck: "com.readystatesoftware.chuck:library:1.1.0"
+    ]
+
+    onlyRelease = [
+            chuckNoOp   : 'com.readystatesoftware.chuck:library-no-op:1.1.0',
+            sherlockNoOp: 'com.github.ajitsing:sherlock-no-op:1.0.4@aar'
+    ]
+
+    unitTest = [
+            harcrestCore       : "org.hamcrest:hamcrest-core:$versions.hamcrest",
+            harmcrestLib       : "org.hamcrest:hamcrest-library:$versions.hamcrest",
+            hamcrestIntegration: "org.hamcrest:hamcrest-integration:1.4-atlassian-1",
+            robolectric        : "org.robolectric:robolectric:$versions.robolectric",
+            supportAnnotation  : "com.android.support:support-annotations:$versions.support",
+            restMock           : "com.github.andrzejchm.RESTMock:android:$versions.restMock",
+            assertj            : "com.squareup.assertj:assertj-android:$versions.assertj",
+            kotlinTest         : "org.jetbrains.kotlin:kotlin-test:$kotlin_version",
+            kotlinJunit        : "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version",
+            mockitoKotlin      : "com.nhaarman.mockitokotlin2:mockito-kotlin:$versions.mockitoKotlin",
+            espressoCore       : "com.android.support.test.espresso:espresso-core:$versions.espresso",
+            espressoIntents    : "com.android.support.test.espresso:espresso-intents:$versions.espresso",
+            testRunner         : "com.android.support.test:runner:$versions.testRunner",
+            testTruth          : "androidx.test.ext:truth:$versions.androidx"
+
+    ] + junit + mockito + restMock
+
+    androidTests = [
+            mockitoAndroid    : "org.mockito:mockito-android:$versions.mockito",
+            espressoCore      : "com.android.support.test.espresso:espresso-core:$versions.espresso",
+            espressoContrib   : "com.android.support.test.espresso:espresso-contrib:$versions.espresso",
+            espressoIntents   : "com.android.support.test.espresso:espresso-intents:$versions.espresso",
+            espressoAcc       : "com.android.support.test.espresso:espresso-accessibility:$versions.espresso",
+            espressoIdle      : "com.android.support.test.espresso:espresso-idling-resource:$versions.espresso",
+            espressoConcurrent: "com.android.support.test.espresso.idling:idling-concurrent:$versions.espresso",
+            espressoNetIdle   : "com.android.support.test.espresso.idling:idling-net:$versions.espresso",
+            testRunner        : "com.android.support.test:runner:$versions.testRunner",
+            testRules         : "com.android.support.test:rules:$versions.testRunner"
+    ] + mockito + restMock
+
+    leakCannary = "com.squareup.leakcanary:leakcanary-android:$versions.leakcanary"
+    timber = "com.jakewharton.timber:timber:$versions.timber"
+    sherlock = "com.github.ajitsing:sherlock:$versions.sherlock"
+
+    dagger = "com.google.dagger:dagger:$versions.dagger"
+    daggerCompiler = "com.google.dagger:dagger-compiler:$versions.dagger"
+
+    glide = "com.github.bumptech.glide:glide:$versions.glide"
+    glideCompiler = "com.github.bumptech.glide:compiler:$versions.glide"
+    glideOkhttp = "com.github.bumptech.glide:okhttp3-integration:$versions.glide"
+    databindingCompiler = "com.android.databinding:compiler:3.1.1"
+
+    firebase = firebase.values()
+    androidx = androixDeps.values()
+    networkLibs = retrofit.values() + okHttp.values() + moshi.values()
+    rxJavaLibs = rxJava.values()
+    otherLibs = [timber, dagger, glide]
+
+    debugLibs = onlyDebug.values() + leakCannary
+    releaseLibs = onlyRelease.values() + leakCannary
+    annotationProcessorLibs = [daggerCompiler, glideCompiler]
+
+    unitTestLibs = unitTest.values()
+    androidTestsLibs = androidTests.values() + androidx
+}
