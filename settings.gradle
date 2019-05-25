@@ -1,1 +1,1 @@
-include ':app', ':total-adapters'
+include ':app', ':totaladapters'
