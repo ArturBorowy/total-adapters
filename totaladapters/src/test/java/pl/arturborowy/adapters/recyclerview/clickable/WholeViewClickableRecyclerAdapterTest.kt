@@ -64,7 +64,7 @@ class WholeViewClickableRecyclerAdapterTest {
 
     private fun getWholeViewClickableRecyclerAdapter() =
             object : WholeViewClickableRecyclerAdapter<View, String>(givenStrings) {
-                override fun getLayoutResId() = R.layout.support_simple_spinner_dropdown_item
+                override fun getLayoutResId() = R.layout.view
             }
 
     class ClassWithMethod {
