@@ -2,7 +2,7 @@ package pl.arturborowy.adapters
 
 import androidx.annotation.LayoutRes
 
-interface HasLayoutResId {
+internal interface HasLayoutResId {
 
     @LayoutRes
     fun getLayoutResId(): Int
