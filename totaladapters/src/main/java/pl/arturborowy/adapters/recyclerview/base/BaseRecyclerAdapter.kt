@@ -8,10 +8,11 @@ import pl.arturborowy.adapters.ViewStylist
 import pl.arturborowy.adapters.recyclerview.ViewHolder
 import pl.arturborowy.util.ViewInflater
 
-abstract class BaseRecyclerAdapter<ViewT : View, ItemT>(private val viewInflater: ViewInflater,
-                                                        private var items: Collection<ItemT> =
+abstract class BaseRecyclerAdapter<ViewT : View, ItemT>(private var items: Collection<ItemT> =
                                                                 listOf()) :
         RecyclerView.Adapter<ViewHolder>(), HasLayoutResId, ViewStylist<ViewT, ItemT> {
+
+    private val viewInflater = ViewInflater()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = viewInflater.inflate(getLayoutResId(), parent) as ViewT

@@ -79,7 +79,7 @@ class BaseRecyclerAdapterTest {
     }
 
     private fun getBaseRecyclerAdapter(): BaseRecyclerAdapter<View, String> {
-        return object : BaseRecyclerAdapter<View, String>(mockViewInflater, givenStrings) {
+        return object : BaseRecyclerAdapter<View, String>(givenStrings) {
             override fun styleView(view: View, item: String, position: Int) {}
 
             override fun getLayoutResId() = R.layout.support_simple_spinner_dropdown_item

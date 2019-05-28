@@ -2,12 +2,10 @@ package pl.arturborowy.adapters.recyclerview.clickable
 
 import android.view.View
 import pl.arturborowy.adapters.recyclerview.base.BaseRecyclerAdapter
-import pl.arturborowy.util.ViewInflater
 
-abstract class ClickableViewRecyclerAdapter<ViewT : View, ItemT>(viewInflater: ViewInflater,
-                                                                 items: Collection<ItemT> =
+abstract class ClickableViewRecyclerAdapter<ViewT : View, ItemT>(items: Collection<ItemT> =
                                                                          listOf()) :
-        BaseRecyclerAdapter<ViewT, ItemT>(viewInflater, items) {
+        BaseRecyclerAdapter<ViewT, ItemT>(items) {
 
     protected var onItemClickAction: (ItemT, Int) -> Unit = { _: ItemT, _: Int -> }
 
