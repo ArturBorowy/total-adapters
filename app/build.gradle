@@ -6,7 +6,6 @@ apply plugin: 'com.github.ben-manes.versions'
 
 android {
     compileSdkVersion 28
-    testOptions.unitTests.includeAndroidResources = true
     buildToolsVersion '28.0.3'
 
     dexOptions {
@@ -73,6 +72,7 @@ android {
 
     testOptions {
         unitTests {
+            includeAndroidResources = true
             returnDefaultValues = true
         }
     }
@@ -95,39 +95,13 @@ configurations.all {
     }
 }
 
-apply from: 'dependencies.gradle'
-
 dependencies {
-
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
-    implementation androidx
-    implementation firebase
-    implementation networkLibs
-    implementation rxJavaLibs
-    implementation otherLibs
-
-    debugImplementation debugLibs
-    releaseImplementation releaseLibs
-
-    implementation(glideOkhttp) {
-        exclude group: 'glide-parent'
-    }
-
-    debugImplementation(sherlock) {
-        transitive = true
-    }
-
-    // APT dependencies
-    kapt annotationProcessorLibs
-    kaptTest daggerCompiler
-    kaptAndroidTest daggerCompiler
-
-    testImplementation unitTestLibs
-    androidTestImplementation androidTestsLibs
-
-    testImplementation unitTestLibs
-    androidTestImplementation androidTestsLibs
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation "androidx.core:core-ktx:1.0.2"
+    implementation "androidx.recyclerview:recyclerview:1.0.0"
 }
 
 // Log out test results to console
