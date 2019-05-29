@@ -14,7 +14,7 @@ internal class WholeViewClickableAdapterTest : AdapterTest() {
     @Before
     override fun setUp() {
         super.setUp()
-        adapter = getWholeViewClickableRecyclerAdapter()
+        adapter = getWholeViewClickableAdapter()
     }
 
     @Test
@@ -48,7 +48,7 @@ internal class WholeViewClickableAdapterTest : AdapterTest() {
                 .method(givenStrings[givenPosition], givenPosition)
     }
 
-    private fun getWholeViewClickableRecyclerAdapter() =
+    private fun getWholeViewClickableAdapter() =
             object : WholeViewClickableAdapter<View, String> {
                 override var onItemClickAction: (String, Int) -> Unit = { _: String, _: Int -> }
             }
