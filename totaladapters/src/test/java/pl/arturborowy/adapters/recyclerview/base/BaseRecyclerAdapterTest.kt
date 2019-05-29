@@ -14,18 +14,16 @@ import pl.arturborowy.adapters.recyclerview.ViewHolder
 
 internal class BaseRecyclerAdapterTest : RecyclerAdapterTest() {
 
-    private lateinit var adapter: BaseRecyclerAdapter<View, String>
+    private lateinit var spyAdapter: BaseRecyclerAdapter<View, String>
 
     @Before
     override fun setUp() {
         super.setUp()
-        adapter = getBaseRecyclerAdapter()
+        spyAdapter = spy(getBaseRecyclerAdapter())
     }
 
     @Test
     fun `onCreateViewHolder returns ViewHolder with correct itemView`() {
-        val spyAdapter = spy(adapter)
-
         val givenParent = FrameLayout(context)
         val inflatedView = View(context)
 
@@ -39,7 +37,7 @@ internal class BaseRecyclerAdapterTest : RecyclerAdapterTest() {
 
     @Test
     fun `onBindViewHolder calls styleView with correct arguments`() {
-        val spyAdapter = spy(adapter)
+        val spyAdapter = spy(spyAdapter)
 
         val givenViewHolder = ViewHolder(View(context))
         val givenPosition = 2
@@ -52,16 +50,26 @@ internal class BaseRecyclerAdapterTest : RecyclerAdapterTest() {
 
     @Test
     fun `itemCount returns items size`() {
-        Assert.assertEquals(givenStrings.size, adapter.itemCount)
+        Assert.assertEquals(givenStrings.size, spyAdapter.itemCount)
     }
 
     @Test
-    fun `updateItems calls notifyDataSetChanged`() {
-        adapter = spy(adapter)
+    fun `updateItems(Collection) calls notifyDataSetChanged`() {
+        spyAdapter = spy(spyAdapter)
 
-        adapter.updateItems(givenStrings)
+        spyAdapter.updateItems(givenStrings)
 
-        Mockito.verify(adapter, Mockito.times(1))
+        Mockito.verify(spyAdapter, Mockito.times(1))
+                .notifyDataSetChanged()
+    }
+
+    @Test
+    fun `updateItems(Array) calls notifyDataSetChanged`() {
+        spyAdapter = spy(spyAdapter)
+
+        spyAdapter.updateItems(givenStrings.toTypedArray())
+
+        Mockito.verify(spyAdapter, Mockito.times(1))
                 .notifyDataSetChanged()
     }
 
