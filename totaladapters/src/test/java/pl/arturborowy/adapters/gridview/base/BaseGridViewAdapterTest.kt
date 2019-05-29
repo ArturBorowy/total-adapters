@@ -1,4 +1,4 @@
-package pl.arturborowy.adapters.gridview
+package pl.arturborowy.adapters.gridview.base
 
 import android.graphics.drawable.ColorDrawable
 import android.widget.FrameLayout
@@ -13,7 +13,6 @@ import org.junit.Test
 import org.mockito.Mockito
 import pl.arturborowy.R
 import pl.arturborowy.adapters.AdapterTest
-import pl.arturborowy.adapters.gridview.base.BaseGridViewAdapter
 import pl.arturborowy.util.TestData
 
 internal class BaseGridViewAdapterTest : AdapterTest() {
