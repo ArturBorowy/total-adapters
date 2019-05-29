@@ -6,6 +6,7 @@ import org.junit.Before
 import org.junit.Test
 import org.mockito.Mockito
 import pl.arturborowy.adapters.AdapterTest
+import pl.arturborowy.util.EmptyMethod
 
 internal class WholeViewClickableAdapterTest : AdapterTest() {
 
@@ -50,7 +51,7 @@ internal class WholeViewClickableAdapterTest : AdapterTest() {
 
     private fun getWholeViewClickableAdapter() =
             object : WholeViewClickableAdapter<View, String> {
-                override var onItemClickAction: (String, Int) -> Unit = { _: String, _: Int -> }
+                override var onItemClickAction: (String, Int) -> Unit = EmptyMethod.twoArguments()
             }
 
     class ClassWithMethod {
