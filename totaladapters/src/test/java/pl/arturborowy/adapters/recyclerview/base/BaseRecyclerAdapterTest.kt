@@ -4,15 +4,19 @@ import android.view.View
 import android.widget.FrameLayout
 import com.nhaarman.mockito_kotlin.given
 import com.nhaarman.mockito_kotlin.spy
+import org.junit.After
 import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
+import org.koin.core.context.stopKoin
+import org.koin.dsl.module
 import org.mockito.Mock
 import org.mockito.Mockito
 import org.mockito.MockitoAnnotations
 import org.robolectric.RobolectricTestRunner
 import pl.arturborowy.R
+import pl.arturborowy.TotalAdapters
 import pl.arturborowy.adapters.recyclerview.ViewHolder
 import pl.arturborowy.util.TestData
 import pl.arturborowy.util.ViewInflater
@@ -31,9 +35,15 @@ class BaseRecyclerAdapterTest {
 
     @Before
     fun setUp() {
+        TotalAdapters.applicationModule = module { single { mockViewInflater } }
+        TotalAdapters.init(context)
+
         MockitoAnnotations.initMocks(this)
         adapter = getBaseRecyclerAdapter()
     }
+
+    @After
+    fun tearDown() = stopKoin()
 
     @Test
     fun `onCreateViewHolder returns ViewHolder with correct itemView`() {

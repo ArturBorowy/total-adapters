@@ -17,5 +17,6 @@ object TotalAdapters {
         }
     }
 
-    private val applicationModule = module { single { ViewInflater() } }
+    // Needed to replace the component with a test specific one
+    var applicationModule = module { single { ViewInflater() } }
 }

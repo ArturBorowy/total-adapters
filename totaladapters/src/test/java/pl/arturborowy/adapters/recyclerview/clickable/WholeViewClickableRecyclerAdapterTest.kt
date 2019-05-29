@@ -2,14 +2,18 @@ package pl.arturborowy.adapters.recyclerview.clickable
 
 import android.view.View
 import com.nhaarman.mockito_kotlin.mock
+import org.junit.After
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
+import org.koin.core.context.stopKoin
+import org.koin.dsl.module
 import org.mockito.Mock
 import org.mockito.Mockito
 import org.mockito.MockitoAnnotations
 import org.robolectric.RobolectricTestRunner
 import pl.arturborowy.R
+import pl.arturborowy.TotalAdapters
 import pl.arturborowy.util.TestData
 import pl.arturborowy.util.ViewInflater
 
@@ -27,9 +31,15 @@ class WholeViewClickableRecyclerAdapterTest {
 
     @Before
     fun setUp() {
+        TotalAdapters.applicationModule = module { single { mockViewInflater } }
+        TotalAdapters.init(context)
+
         MockitoAnnotations.initMocks(this)
         adapter = getWholeViewClickableRecyclerAdapter()
     }
+
+    @After
+    fun tearDown() = stopKoin()
 
     @Test
     fun `styleView sets onClickListener on givenView`() {
