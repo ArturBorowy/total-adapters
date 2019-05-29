@@ -1,16 +1,15 @@
-package pl.arturborowy.adapters.recyclerview.clickable
+package pl.arturborowy.adapters.common
 
 import android.view.View
 import com.nhaarman.mockito_kotlin.mock
 import org.junit.Before
 import org.junit.Test
 import org.mockito.Mockito
-import pl.arturborowy.R
 import pl.arturborowy.adapters.AdapterTest
 
-internal class WholeViewClickableRecyclerAdapterTest : AdapterTest() {
+internal class WholeViewClickableAdapterTest : AdapterTest() {
 
-    private lateinit var adapter: WholeViewClickableRecyclerAdapter<View, String>
+    private lateinit var adapter: WholeViewClickableAdapter<View, String>
 
     @Before
     override fun setUp() {
@@ -50,8 +49,8 @@ internal class WholeViewClickableRecyclerAdapterTest : AdapterTest() {
     }
 
     private fun getWholeViewClickableRecyclerAdapter() =
-            object : WholeViewClickableRecyclerAdapter<View, String>(givenStrings) {
-                override fun getLayoutResId() = R.layout.view
+            object : WholeViewClickableAdapter<View, String> {
+                override var onItemClickAction: (String, Int) -> Unit = { _: String, _: Int -> }
             }
 
     class ClassWithMethod {
