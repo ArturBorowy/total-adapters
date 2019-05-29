@@ -18,5 +18,5 @@ object TotalAdapters {
     }
 
     // Needed to replace the component with a test specific one
-    var applicationModule = module { single { ViewInflater() } }
+    internal var applicationModule = module { single { ViewInflater() } }
 }
