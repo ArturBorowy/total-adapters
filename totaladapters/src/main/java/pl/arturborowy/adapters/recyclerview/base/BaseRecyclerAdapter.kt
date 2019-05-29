@@ -3,6 +3,8 @@ package pl.arturborowy.adapters.recyclerview.base
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import org.koin.core.KoinComponent
+import org.koin.core.inject
 import pl.arturborowy.adapters.HasLayoutResId
 import pl.arturborowy.adapters.ViewStylist
 import pl.arturborowy.adapters.recyclerview.ViewHolder
@@ -10,9 +12,9 @@ import pl.arturborowy.util.ViewInflater
 
 abstract class BaseRecyclerAdapter<ViewT : View, ItemT>(private var items: Collection<ItemT> =
                                                                 listOf()) :
-        RecyclerView.Adapter<ViewHolder>(), HasLayoutResId, ViewStylist<ViewT, ItemT> {
+        RecyclerView.Adapter<ViewHolder>(), HasLayoutResId, ViewStylist<ViewT, ItemT>, KoinComponent {
 
-    private val viewInflater = ViewInflater()
+    private val viewInflater: ViewInflater by inject()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = viewInflater.inflate(getLayoutResId(), parent) as ViewT

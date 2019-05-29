@@ -39,6 +39,7 @@ dependencies {
     final ANDROIDX_TEST_RUNNER_VERSION = '1.1.1'
     final ANDROIDX_TEST_EXT_VERSION = '1.1.0'
     final ESPRESSO_VERSION = '3.1.1'
+    final KOIN_VERSION = '2.0.0'
 
     def jUnit = "junit:junit:4.12"
     def mockito = "org.mockito:mockito-core:$MOCKITO_VERSION"
@@ -50,6 +51,11 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.0.2'
     implementation "androidx.core:core-ktx:1.0.2"
     implementation "androidx.recyclerview:recyclerview:1.0.0"
+
+    api "org.koin:koin-android:$KOIN_VERSION"
+    api "org.koin:koin-android-scope:$KOIN_VERSION"
+    api "org.koin:koin-android-viewmodel:$KOIN_VERSION"
+    api "org.koin:koin-android-ext:$KOIN_VERSION"
 
     testImplementation jUnit
     testImplementation mockito
