@@ -6,9 +6,9 @@ import org.junit.Before
 import org.junit.Test
 import org.mockito.Mockito
 import pl.arturborowy.R
-import pl.arturborowy.adapters.recyclerview.RecyclerAdapterTest
+import pl.arturborowy.adapters.AdapterTest
 
-internal class WholeViewClickableRecyclerAdapterTest : RecyclerAdapterTest() {
+internal class WholeViewClickableRecyclerAdapterTest : AdapterTest() {
 
     private lateinit var adapter: WholeViewClickableRecyclerAdapter<View, String>
 

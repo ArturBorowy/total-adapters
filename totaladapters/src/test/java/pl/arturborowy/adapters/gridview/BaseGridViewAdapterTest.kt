@@ -12,10 +12,10 @@ import org.junit.Before
 import org.junit.Test
 import org.mockito.Mockito
 import pl.arturborowy.R
-import pl.arturborowy.adapters.recyclerview.RecyclerAdapterTest
+import pl.arturborowy.adapters.AdapterTest
 import pl.arturborowy.util.TestData
 
-internal class BaseGridViewAdapterTest : RecyclerAdapterTest() {
+internal class BaseGridViewAdapterTest : AdapterTest() {
 
     private lateinit var adapter: BaseGridViewAdapter<String, TextView>
 
