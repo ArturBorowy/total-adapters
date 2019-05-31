@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
 import pl.arturborowy.R
 
-class SimpleExampleActivity : AppCompatActivity() {
+class BaseRecyclerAdapterExampleActivity : AppCompatActivity() {
 
     private val adapter = ExampleBaseRecyclerAdapter()
 
