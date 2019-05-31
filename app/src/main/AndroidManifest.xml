@@ -23,6 +23,8 @@
 
         <activity android:name=".examples.recyclerview.base.BaseRecyclerAdapterExampleActivity" />
 
+        <activity android:name=".examples.recyclerview.clickable.ExampleClickableViewRecyclerAdapterExampleActivity" />
+
     </application>
 
 </manifest>
