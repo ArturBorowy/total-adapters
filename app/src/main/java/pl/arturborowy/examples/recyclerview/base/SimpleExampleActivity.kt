@@ -1,4 +1,4 @@
-package pl.arturborowy.simple
+package pl.arturborowy.examples.recyclerview.base
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

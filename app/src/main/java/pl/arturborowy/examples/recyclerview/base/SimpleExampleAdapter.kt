@@ -1,4 +1,4 @@
-package pl.arturborowy.simple
+package pl.arturborowy.examples.recyclerview.base
 
 import android.widget.TextView
 import pl.arturborowy.R
