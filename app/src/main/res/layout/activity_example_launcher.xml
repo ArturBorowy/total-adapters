@@ -29,11 +29,14 @@
                 android:layout_height="wrap_content">
 
                 <RadioButton
+                    android:id="@+id/recyclerViewRadio"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:checked="true"
                     android:text="@string/adapter_type_view_recycler" />
 
                 <RadioButton
+                    android:id="@+id/gridViewRadio"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/adapter_type_view_grid" />
@@ -53,16 +56,20 @@
                 android:layout_height="wrap_content">
 
                 <RadioButton
+                    android:id="@+id/baseAdapterRadio"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:checked="true"
                     android:text="@string/adapter_type_adapter_base" />
 
                 <RadioButton
+                    android:id="@+id/clickableViewAdapterRadio"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/adapter_type_adapter_clickable_view" />
 
                 <RadioButton
+                    android:id="@+id/wholeViewClickableAdapterRadio"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/adapter_type_adapter_whole_view_clickable" />
