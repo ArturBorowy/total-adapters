@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
 import pl.arturborowy.R
 
-class ExampleClickableViewRecyclerAdapterExampleActivity : AppCompatActivity() {
+class ClickableViewRecyclerAdapterExampleActivity : AppCompatActivity() {
 
     private val adapter = ExampleClickableViewRecyclerAdapter()
 
