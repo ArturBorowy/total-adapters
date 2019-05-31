@@ -8,7 +8,7 @@ import pl.arturborowy.R
 
 class SimpleExampleActivity : AppCompatActivity() {
 
-    private val adapter = SimpleExampleAdapter()
+    private val adapter = ExampleBaseRecyclerAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
