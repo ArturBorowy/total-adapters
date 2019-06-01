@@ -7,6 +7,7 @@ import org.jetbrains.anko.startActivity
 import pl.arturborowy.R
 import pl.arturborowy.examples.recyclerview.base.BaseRecyclerAdapterExampleActivity
 import pl.arturborowy.examples.recyclerview.clickable.ClickableViewRecyclerAdapterExampleActivity
+import pl.arturborowy.examples.recyclerview.wholeviewclickable.WholeViewClickableRecyclerAdapterExampleActivity
 
 class ExampleLauncherActivity : AppCompatActivity() {
 
@@ -40,7 +41,8 @@ class ExampleLauncherActivity : AppCompatActivity() {
             isBaseChecked -> startActivity<BaseRecyclerAdapterExampleActivity>()
             isClickableViewChecked ->
                 startActivity<ClickableViewRecyclerAdapterExampleActivity>()
-            isWholeViewClickableChecked -> TODO()
+            isWholeViewClickableChecked ->
+                startActivity<WholeViewClickableRecyclerAdapterExampleActivity>()
         }
     }
 
