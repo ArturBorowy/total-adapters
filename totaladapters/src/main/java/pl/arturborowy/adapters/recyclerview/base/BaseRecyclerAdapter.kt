@@ -30,6 +30,4 @@ abstract class BaseRecyclerAdapter<ViewT : View, ItemT>(private var items: Colle
         this.items = items
         notifyDataSetChanged()
     }
-
-    fun updateItems(items: Array<ItemT>) = updateItems(items.toList())
 }
