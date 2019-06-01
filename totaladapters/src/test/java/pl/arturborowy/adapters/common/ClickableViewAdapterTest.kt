@@ -6,7 +6,7 @@ import org.junit.Test
 import pl.arturborowy.adapters.AdapterTest
 import pl.arturborowy.util.EmptyMethod
 
-internal class ClickableVieAdapterTest : AdapterTest() {
+internal class ClickableViewAdapterTest : AdapterTest() {
 
     private lateinit var adapter: ClickableViewAdapter<String>
 
