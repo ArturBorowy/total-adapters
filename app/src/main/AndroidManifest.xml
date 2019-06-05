@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".launcher.ExampleLauncherActivity">
+        <activity android:name=".selector.ExampleSelectorActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
