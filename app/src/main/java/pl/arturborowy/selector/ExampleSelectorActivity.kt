@@ -1,19 +1,19 @@
-package pl.arturborowy.launcher
+package pl.arturborowy.selector
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_example_launcher.*
+import kotlinx.android.synthetic.main.activity_example_selector.*
 import org.jetbrains.anko.startActivity
 import pl.arturborowy.R
 import pl.arturborowy.examples.recyclerview.base.BaseRecyclerAdapterExampleActivity
 import pl.arturborowy.examples.recyclerview.clickable.ClickableViewRecyclerAdapterExampleActivity
 import pl.arturborowy.examples.recyclerview.wholeviewclickable.WholeViewClickableRecyclerAdapterExampleActivity
 
-class ExampleLauncherActivity : AppCompatActivity() {
+class ExampleSelectorActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_example_launcher)
+        setContentView(R.layout.activity_example_selector)
 
         showExampleBtn.setOnClickListener { showExample() }
     }
