@@ -9,4 +9,9 @@ class SimpleExampleApp : Application() {
         super.onCreate()
         TotalAdapters.init(this)
     }
+
+    override fun onTerminate() {
+        super.onTerminate()
+        TotalAdapters.destroy()
+    }
 }

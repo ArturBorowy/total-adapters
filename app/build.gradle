@@ -96,13 +96,39 @@ configurations.all {
 }
 
 dependencies {
+    final MOCKITO_VERSION = '2.19.0'
+    final ANDROIDX_TEST_RUNNER_VERSION = '1.1.1'
+    final ANDROIDX_TEST_EXT_VERSION = '1.1.0'
+    final ESPRESSO_VERSION = '3.1.1'
+
+    def jUnit = "junit:junit:4.12"
+    def mockito = "org.mockito:mockito-core:$MOCKITO_VERSION"
+    def mockitoKotlin = "com.nhaarman:mockito-kotlin:1.5.0"
+
+    implementation project(path: ':totaladapters')
+
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     implementation 'androidx.appcompat:appcompat:1.0.2'
     implementation "androidx.core:core-ktx:1.0.2"
     implementation "androidx.recyclerview:recyclerview:1.0.0"
-    implementation project(path: ':totaladapters')
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+
+    implementation "org.jetbrains.anko:anko:0.10.8"
+
+    testImplementation jUnit
+    testImplementation mockito
+    testImplementation(mockitoKotlin) {
+        exclude group: 'org.jetbrains.kotlin', module: 'kotlin-stdlib'
+    }
+    testImplementation "org.robolectric:robolectric:4.2.1"
+
+    testImplementation "androidx.test:runner:$ANDROIDX_TEST_RUNNER_VERSION"
+    testImplementation "androidx.test.ext:junit:$ANDROIDX_TEST_EXT_VERSION"
+    testImplementation "androidx.test.espresso:espresso-intents:$ESPRESSO_VERSION"
+    testImplementation "androidx.test.espresso:espresso-core:$ESPRESSO_VERSION"
+    testImplementation "androidx.test.ext:truth:$ANDROIDX_TEST_EXT_VERSION"
 }
 
 // Log out test results to console

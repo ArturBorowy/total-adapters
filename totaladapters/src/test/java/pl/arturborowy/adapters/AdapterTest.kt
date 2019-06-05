@@ -1,4 +1,4 @@
-package pl.arturborowy.adapters.recyclerview
+package pl.arturborowy.adapters
 
 import org.junit.After
 import org.junit.Before
@@ -13,7 +13,7 @@ import pl.arturborowy.util.TestData
 import pl.arturborowy.util.ViewInflater
 
 @RunWith(RobolectricTestRunner::class)
-internal abstract class RecyclerAdapterTest {
+internal abstract class AdapterTest {
 
     protected val context = TestData.getContext()
 
