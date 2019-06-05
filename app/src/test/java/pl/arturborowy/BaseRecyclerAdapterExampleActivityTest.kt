@@ -3,7 +3,7 @@ package pl.arturborowy
 import android.widget.TextView
 import androidx.core.view.children
 import androidx.test.core.app.ActivityScenario
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_recycler.*
 import org.junit.Assert
 import org.junit.Test
 import org.junit.runner.RunWith
