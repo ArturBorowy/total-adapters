@@ -6,6 +6,8 @@ import kotlinx.android.synthetic.main.activity_example_selector.*
 import org.jetbrains.anko.startActivity
 import pl.arturborowy.R
 import pl.arturborowy.examples.recyclerview.base.BaseRecyclerAdapterExampleActivity
+import pl.arturborowy.examples.recyclerview.clickable.ClickableViewRecyclerAdapterExampleActivity
+import pl.arturborowy.examples.recyclerview.wholeviewclickable.WholeViewClickableRecyclerAdapterExampleActivity
 
 class ExampleSelectorActivity : AppCompatActivity() {
 
@@ -37,8 +39,10 @@ class ExampleSelectorActivity : AppCompatActivity() {
                                         isWholeViewClickableChecked: Boolean) {
         when {
             isBaseChecked -> startActivity<BaseRecyclerAdapterExampleActivity>()
-            isClickableViewChecked -> TODO()
-            isWholeViewClickableChecked -> TODO()
+            isClickableViewChecked ->
+                startActivity<ClickableViewRecyclerAdapterExampleActivity>()
+            isWholeViewClickableChecked ->
+                startActivity<WholeViewClickableRecyclerAdapterExampleActivity>()
         }
     }
 
