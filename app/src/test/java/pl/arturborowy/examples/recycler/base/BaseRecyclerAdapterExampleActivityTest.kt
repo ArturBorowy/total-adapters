@@ -1,4 +1,4 @@
-package pl.arturborowy
+package pl.arturborowy.examples.recycler.base
 
 import android.widget.TextView
 import androidx.core.view.children
@@ -8,6 +8,7 @@ import org.junit.Assert
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
+import pl.arturborowy.R
 import pl.arturborowy.examples.recyclerview.base.BaseRecyclerAdapterExampleActivity
 import pl.arturborowy.util.TestData
 
