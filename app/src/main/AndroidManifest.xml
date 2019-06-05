@@ -25,6 +25,8 @@
 
         <activity android:name=".examples.recyclerview.clickable.ClickableViewRecyclerAdapterExampleActivity" />
 
+        <activity android:name=".examples.recyclerview.wholeviewclickable.WholeViewClickableRecyclerAdapterExampleActivity" />
+
     </application>
 
 </manifest>

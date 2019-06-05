@@ -1,4 +1,4 @@
-package pl.arturborowy.examples.recyclerview.clickable
+package pl.arturborowy.examples.recyclerview.wholeviewclickable
 
 import android.os.Bundle
 import android.widget.Toast
@@ -7,9 +7,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_recycler.*
 import pl.arturborowy.R
 
-class ClickableViewRecyclerAdapterExampleActivity : AppCompatActivity() {
+class WholeViewClickableRecyclerAdapterExampleActivity : AppCompatActivity() {
 
-    private val adapter = ExampleClickableViewRecyclerAdapter()
+    private val adapter = ExampleWholeViewClickableRecyclerAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,11 +19,12 @@ class ClickableViewRecyclerAdapterExampleActivity : AppCompatActivity() {
     }
 
     private fun initList() {
+        adapter.setOnItemClickListener { item, position -> onItemClick(item, position) }
+
         list.layoutManager = LinearLayoutManager(this)
         list.adapter = adapter
 
         adapter.updateItems(getItems())
-        adapter.setOnItemClickListener { item, position -> onItemClick(item, position) }
     }
 
     private fun getItems() = resources.getStringArray(R.array.strings)
