@@ -22,8 +22,17 @@ abstract class BaseGridViewAdapter<ItemT, ViewT : View>(private var items: Colle
     override fun getItem(position: Int) = items.elementAt(position)
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
-        val view = (convertView ?: createNewView(parent)) as ViewT
-        styleView(view, getItem(position), position)
+        var view = (convertView ?: createNewView(parent)) as ViewT
+
+        val item = getItem(position)
+
+        try {
+            styleView(view, item, position)
+        } catch (classCastException: ClassCastException) {
+            view = createNewView(parent) as ViewT
+            styleView(view, item, position)
+        }
+
         return view
     }
 

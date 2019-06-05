@@ -2,6 +2,7 @@ package pl.arturborowy.adapters.gridview.base
 
 import android.graphics.drawable.ColorDrawable
 import android.widget.FrameLayout
+import android.widget.ImageView
 import android.widget.TextView
 import com.nhaarman.mockito_kotlin.any
 import com.nhaarman.mockito_kotlin.eq
@@ -49,6 +50,18 @@ internal class BaseGridViewAdapterTest : AdapterTest() {
         val givenConvertView = TextView(context)
         val actualView = adapter.getView(0, givenConvertView, FrameLayout(context))
         Assert.assertEquals(givenConvertView, actualView)
+    }
+
+    @Test
+    fun `getView with bad type convertView inflates view in viewInflater`() {
+        val givenView = TextView(context)
+
+        given(mockViewInflater.inflate(eq(adapter.getLayoutResId()), any(), any()))
+                .willReturn(givenView)
+
+        val badTypeConvertView = ImageView(context)
+        val actualView = adapter.getView(0, badTypeConvertView, FrameLayout(context))
+        Assert.assertEquals(givenView, actualView)
     }
 
     @Test
