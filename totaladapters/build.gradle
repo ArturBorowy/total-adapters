@@ -1,8 +1,9 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion 28
-
 
     defaultConfig {
         minSdkVersion 19
@@ -21,13 +22,54 @@ android {
         }
     }
 
+    testOptions {
+        unitTests {
+            returnDefaultValues = true
+            includeAndroidResources = true
+        }
+    }
+
+    androidExtensions {
+        experimental = true
+    }
 }
 
 dependencies {
+    final MOCKITO_VERSION = '2.19.0'
+    final ANDROIDX_TEST_RUNNER_VERSION = '1.1.1'
+    final ANDROIDX_TEST_EXT_VERSION = '1.1.0'
+    final ESPRESSO_VERSION = '3.1.1'
+    final KOIN_VERSION = '2.0.0'
+
+    def jUnit = "junit:junit:4.12"
+    def mockito = "org.mockito:mockito-core:$MOCKITO_VERSION"
+    def mockitoKotlin = "com.nhaarman:mockito-kotlin:1.5.0"
+
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
     implementation 'androidx.appcompat:appcompat:1.0.2'
-    testImplementation 'junit:junit:4.12'
+    implementation "androidx.core:core-ktx:1.0.2"
+    implementation "androidx.recyclerview:recyclerview:1.0.0"
+
+    api "org.koin:koin-android:$KOIN_VERSION"
+    api "org.koin:koin-android-scope:$KOIN_VERSION"
+    api "org.koin:koin-android-viewmodel:$KOIN_VERSION"
+    api "org.koin:koin-android-ext:$KOIN_VERSION"
+
+    testImplementation jUnit
+    testImplementation mockito
+    testImplementation(mockitoKotlin) {
+        exclude group: 'org.jetbrains.kotlin', module: 'kotlin-stdlib'
+    }
+    testImplementation "org.robolectric:robolectric:4.2.1"
+
+    testImplementation "androidx.test:runner:$ANDROIDX_TEST_RUNNER_VERSION"
+    testImplementation "androidx.test.ext:junit:$ANDROIDX_TEST_EXT_VERSION"
+    testImplementation "androidx.test.espresso:espresso-intents:$ESPRESSO_VERSION"
+    testImplementation "androidx.test.espresso:espresso-core:$ESPRESSO_VERSION"
+    testImplementation "androidx.test.ext:truth:$ANDROIDX_TEST_EXT_VERSION"
+
     androidTestImplementation 'androidx.test:runner:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
 }

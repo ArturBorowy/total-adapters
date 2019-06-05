@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">Total Adapters Sample</string>
+
+    <string-array name="strings">
+        <item>Zero</item>
+        <item>One</item>
+        <item>Two</item>
+        <item>Three</item>
+        <item>Four</item>
+        <item>Five</item>
+        <item>Six</item>
+        <item>Seven</item>
+        <item>Eight</item>
+        <item>Nine</item>
+        <item>Ten</item>
+    </string-array>
 </resources>

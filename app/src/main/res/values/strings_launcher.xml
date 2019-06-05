@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="adapter_type_view_label">View type:</string>
+
+    <string name="adapter_type_view_recycler">RecyclerView</string>
+    <string name="adapter_type_view_grid">GridView</string>
+
+    <string name="adapter_type_adapter_label">Adapter type:</string>
+
+    <string name="adapter_type_adapter_base">Base</string>
+    <string name="adapter_type_adapter_clickable_view">ClickableView</string>
+    <string name="adapter_type_adapter_whole_view_clickable">WholeViewClickable</string>
+
+    <string name="show_example_btn">Show example</string>
+
+</resources>
