@@ -9,10 +9,10 @@ import org.junit.Before
 import org.junit.Test
 import org.mockito.Mockito
 import pl.arturborowy.R
-import pl.arturborowy.adapters.recyclerview.RecyclerAdapterTest
+import pl.arturborowy.adapters.AdapterTest
 import pl.arturborowy.adapters.recyclerview.ViewHolder
 
-internal class BaseRecyclerAdapterTest : RecyclerAdapterTest() {
+internal class BaseRecyclerAdapterTest : AdapterTest() {
 
     private lateinit var adapter: BaseRecyclerAdapter<View, String>
 

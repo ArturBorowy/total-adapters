@@ -6,19 +6,26 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
+        android:name=".simple.SimpleExampleApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".MainActivity">
+        <activity android:name=".selector.ExampleSelectorActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".examples.recyclerview.base.BaseRecyclerAdapterExampleActivity" />
+
+        <activity android:name=".examples.recyclerview.clickable.ClickableViewRecyclerAdapterExampleActivity" />
+
+        <activity android:name=".examples.recyclerview.wholeviewclickable.WholeViewClickableRecyclerAdapterExampleActivity" />
 
     </application>
 
