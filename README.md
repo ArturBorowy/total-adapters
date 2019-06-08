@@ -33,19 +33,19 @@ allprojects {
 
   - `RecyclerView` example: [ExampleBaseRecyclerAdapter](/app/src/main/java/pl/arturborowy/examples/recyclerview/base/ExampleBaseRecyclerAdapter.kt)
 
-  - `GridView` example: *in progress*
+  - `GridView` example: [ExampleBaseGridViewAdapter](app/src/main/java/pl/arturborowy/examples/gridview/base/ExampleBaseGridViewAdapter.kt)
 
 - **clickable view** ([ClickableViewRecyclerAdapter](totaladapters/src/main/java/pl/arturborowy/adapters/recyclerview/clickable/ClickableViewRecyclerAdapter.kt)/[ClickableViewGridViewAdapter](totaladapters/src/main/java/pl/arturborowy/adapters/gridview/clickable/ClickableViewGridViewAdapter.kt) and interface [ClickableViewAdapter](totaladapters/src/main/java/pl/arturborowy/adapters/common/interfaces/ClickableViewAdapter.kt))
 
   - `RecyclerView` example: [ExampleClickableViewRecyclerAdapter](app/src/main/java/pl/arturborowy/examples/recyclerview/clickable/ExampleClickableViewRecyclerAdapter.kt)
 
-  - `GridView` example: *in progress*
+  - `GridView` example: [ExampleClickableViewGridViewAdapter](app/src/main/java/pl/arturborowy/examples/gridview/clickable/ExampleClickableViewGridViewAdapter.kt)
 
 - **whole view clickable** ([WholeViewClickableRecyclerAdapter](totaladapters/src/main/java/pl/arturborowy/adapters/recyclerview/clickable/WholeViewClickableRecyclerAdapter.kt)/[WholeViewClickableGridViewAdapter](totaladapters/src/main/java/pl/arturborowy/adapters/gridview/clickable/WholeViewClickableGridViewAdapter.kt) and interface [ClickableViewAdapter](totaladapters/src/main/java/pl/arturborowy/adapters/common/interfaces/ClickableViewAdapter.kt))
 
   - `RecyclerView` example: [ExampleWholeViewClickableRecyclerAdapter](app/src/main/java/pl/arturborowy/examples/recyclerview/wholeviewclickable/ExampleWholeViewClickableRecyclerAdapter.kt)
 
-  - `GridView` example: *in progress*
+  - `GridView` example: [ExampleWholeViewClickableGridViewAdapter](app/src/main/java/pl/arturborowy/examples/gridview/wholeviewclickable/ExampleWholeViewClickableGridViewAdapter.kt)
   
 ## License
 
