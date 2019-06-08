@@ -4,12 +4,12 @@ import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
 import pl.arturborowy.adapters.AdapterTest
-import pl.arturborowy.adapters.common.contracts.ClickableViewAdapter
+import pl.arturborowy.adapters.common.contracts.OnItemListenerHolder
 import pl.arturborowy.util.EmptyMethod
 
 internal class ClickableViewAdapterTest : AdapterTest() {
 
-    private lateinit var adapter: ClickableViewAdapter<String>
+    private lateinit var adapter: OnItemListenerHolder<String>
 
     @Before
     override fun setUp() {
@@ -27,7 +27,7 @@ internal class ClickableViewAdapterTest : AdapterTest() {
     }
 
     private fun getClickableViewAdapter() =
-            object : ClickableViewAdapter<String> {
+            object : OnItemListenerHolder<String> {
                 override var onItemClickAction: (String, Int) -> Unit = EmptyMethod.twoArguments()
             }
 }

@@ -1,6 +1,6 @@
 package pl.arturborowy.adapters.common.contracts
 
-internal interface ClickableViewAdapter<ItemT> {
+internal interface OnItemListenerHolder<ItemT> {
 
     var onItemClickAction: (ItemT, Int) -> Unit
 
