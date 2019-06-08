@@ -26,7 +26,7 @@ class BaseRecyclerAdapterExampleActivityTest {
             val children = activity.list.children
 
             for (i in 0 until items.size) {
-                val child = children.toList()[i] as TextView
+                val child = children.elementAt(i) as TextView
                 val item = items[i]
 
                 Assert.assertEquals(item, child.text)
