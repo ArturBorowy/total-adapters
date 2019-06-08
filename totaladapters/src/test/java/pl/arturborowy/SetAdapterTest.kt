@@ -7,7 +7,7 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
 import pl.arturborowy.adapters.AdapterTest
-import pl.arturborowy.adapters.common.UpdateItemsAdapter
+import pl.arturborowy.adapters.common.interfaces.UpdateItemsAdapter
 import pl.arturborowy.adapters.recyclerview.base.BaseRecyclerAdapter
 import pl.arturborowy.util.extension.setAdapter
 

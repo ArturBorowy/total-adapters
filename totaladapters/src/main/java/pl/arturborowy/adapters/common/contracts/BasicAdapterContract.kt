@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import org.koin.core.KoinComponent
 import pl.arturborowy.adapters.HasLayoutResId
 import pl.arturborowy.adapters.ViewStylist
-import pl.arturborowy.adapters.common.UpdateItemsAdapter
+import pl.arturborowy.adapters.common.interfaces.UpdateItemsAdapter
 import pl.arturborowy.util.ViewInflater
 
 internal interface BasicAdapterContract<ItemT, ViewT : View> :
