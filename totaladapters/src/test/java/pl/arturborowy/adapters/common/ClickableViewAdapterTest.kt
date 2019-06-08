@@ -4,6 +4,7 @@ import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
 import pl.arturborowy.adapters.AdapterTest
+import pl.arturborowy.adapters.common.contracts.ClickableViewAdapter
 import pl.arturborowy.util.EmptyMethod
 
 internal class ClickableViewAdapterTest : AdapterTest() {

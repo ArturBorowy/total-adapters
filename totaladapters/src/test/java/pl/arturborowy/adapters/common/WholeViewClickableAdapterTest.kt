@@ -6,6 +6,7 @@ import org.junit.Before
 import org.junit.Test
 import org.mockito.Mockito
 import pl.arturborowy.adapters.AdapterTest
+import pl.arturborowy.adapters.common.contracts.WholeViewClickableAdapter
 import pl.arturborowy.util.EmptyMethod
 
 internal class WholeViewClickableAdapterTest : AdapterTest() {

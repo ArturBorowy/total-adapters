@@ -1,4 +1,4 @@
-package pl.arturborowy.adapters.common
+package pl.arturborowy.adapters.common.contracts
 
 import android.view.View
 import pl.arturborowy.adapters.ViewStylist
