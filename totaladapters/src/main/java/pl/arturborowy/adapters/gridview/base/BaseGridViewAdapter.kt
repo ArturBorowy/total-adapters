@@ -7,37 +7,30 @@ import org.koin.core.inject
 import pl.arturborowy.adapters.common.BasicAdapterContract
 import pl.arturborowy.util.ViewInflater
 
-abstract class BaseGridViewAdapter<ItemT, ViewT : View>(private var items: Collection<ItemT> =
+abstract class BaseGridViewAdapter<ItemT, ViewT : View>(override var items: Collection<ItemT> =
                                                                 listOf()) :
         BaseAdapter(), BasicAdapterContract<ItemT, ViewT> {
 
+    override val notifyDataSetChanged = { notifyDataSetChanged() }
+
     private val viewInflater: ViewInflater by inject()
 
-    override fun getCount() = items.size
+    override fun getCount() = getItemCount()
 
     override fun getItemId(position: Int): Long = 0
 
-    override fun getItem(position: Int) = items.elementAt(position)
+    override fun getItem(position: Int) = getItemAt(position)
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
-        var view = (convertView ?: createNewView(parent)) as ViewT
-
-        val item = getItem(position)
+        var view = (convertView ?: createNewView(viewInflater, parent)) as ViewT
 
         try {
-            styleView(view, item, position)
+            styleView(view, position)
         } catch (classCastException: ClassCastException) {
-            view = createNewView(parent) as ViewT
-            styleView(view, item, position)
+            view = createNewView(viewInflater, parent)
+            styleView(view, position)
         }
 
         return view
-    }
-
-    private fun createNewView(parent: ViewGroup) = viewInflater.inflate(getLayoutResId(), parent)
-
-    override fun updateItems(items: Collection<ItemT>) {
-        this.items = items
-        notifyDataSetChanged()
     }
 }
