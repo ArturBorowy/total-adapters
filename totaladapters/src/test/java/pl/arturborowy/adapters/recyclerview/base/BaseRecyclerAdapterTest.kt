@@ -23,6 +23,16 @@ internal class BaseRecyclerAdapterTest : AdapterTest() {
     }
 
     @Test
+    fun `notifyDataSetChanged (object) invoke calls notifyDataSetChanged() method`() {
+        adapter = spy(adapter)
+
+        adapter.notifyDataSetChanged()
+
+        Mockito.verify(adapter, Mockito.times(1))
+                .notifyDataSetChanged()
+    }
+
+    @Test
     fun `onCreateViewHolder returns ViewHolder with correct itemView`() {
         val spyAdapter = spy(adapter)
 
@@ -53,16 +63,6 @@ internal class BaseRecyclerAdapterTest : AdapterTest() {
     @Test
     fun `itemCount returns items size`() {
         Assert.assertEquals(givenStrings.size, adapter.itemCount)
-    }
-
-    @Test
-    fun `updateItems calls notifyDataSetChanged`() {
-        val spyAdapter = spy(adapter)
-
-        spyAdapter.updateItems(givenStrings)
-
-        Mockito.verify(spyAdapter, Mockito.times(1))
-                .notifyDataSetChanged()
     }
 
     private fun getBaseRecyclerAdapter(): BaseRecyclerAdapter<View, String> {

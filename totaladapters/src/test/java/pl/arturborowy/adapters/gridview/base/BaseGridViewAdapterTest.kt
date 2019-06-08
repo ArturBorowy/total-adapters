@@ -14,7 +14,6 @@ import org.junit.Test
 import org.mockito.Mockito
 import pl.arturborowy.R
 import pl.arturborowy.adapters.AdapterTest
-import pl.arturborowy.util.TestData
 
 internal class BaseGridViewAdapterTest : AdapterTest() {
 
@@ -27,8 +26,23 @@ internal class BaseGridViewAdapterTest : AdapterTest() {
     }
 
     @Test
-    fun `getCount returns items size`() {
-        Assert.assertEquals(givenStrings.size, adapter.count)
+    fun `notifyDataSetChanged (object) invoke calls notifyDataSetChanged() method`() {
+        adapter = spy(adapter)
+
+        adapter.notifyDataSetChanged()
+
+        Mockito.verify(adapter, Mockito.times(1))
+                .notifyDataSetChanged()
+    }
+
+    @Test
+    fun `getCount calls getItemCount`() {
+        adapter = spy(adapter)
+
+        adapter.count
+
+        Mockito.verify(adapter, Mockito.times(1))
+                .getItemCount()
     }
 
     @Test
@@ -39,9 +53,14 @@ internal class BaseGridViewAdapterTest : AdapterTest() {
     }
 
     @Test
-    fun `getItem returns item of given index`() {
+    fun `getItem calls getItemAt with given index`() {
+        adapter = spy(adapter)
+
         for (i in 0..givenStrings.lastIndex) {
-            Assert.assertEquals(givenStrings[i], adapter.getItem(i))
+            adapter.getItem(i)
+
+            Mockito.verify(adapter, Mockito.times(1))
+                    .getItemAt(i)
         }
     }
 
@@ -124,14 +143,4 @@ internal class BaseGridViewAdapterTest : AdapterTest() {
                 override fun styleView(view: TextView, item: String, position: Int) =
                         customizeInflatedView(view, item, position)
             }
-
-    @Test
-    fun `updateItems calls notifyDataSetChanged`() {
-        adapter = spy(adapter)
-
-        adapter.updateItems(TestData.STRING_LIST)
-
-        Mockito.verify(adapter, Mockito.times(1))
-                .notifyDataSetChanged()
-    }
 }
