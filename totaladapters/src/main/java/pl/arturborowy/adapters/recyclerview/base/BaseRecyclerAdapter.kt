@@ -7,12 +7,17 @@ import org.koin.core.KoinComponent
 import org.koin.core.inject
 import pl.arturborowy.adapters.HasLayoutResId
 import pl.arturborowy.adapters.ViewStylist
+import pl.arturborowy.adapters.common.BasicAdapter
 import pl.arturborowy.adapters.recyclerview.ViewHolder
 import pl.arturborowy.util.ViewInflater
 
 abstract class BaseRecyclerAdapter<ViewT : View, ItemT>(private var items: Collection<ItemT> =
                                                                 listOf()) :
-        RecyclerView.Adapter<ViewHolder>(), HasLayoutResId, ViewStylist<ViewT, ItemT>, KoinComponent {
+        RecyclerView.Adapter<ViewHolder>(),
+        HasLayoutResId,
+        ViewStylist<ViewT, ItemT>,
+        KoinComponent,
+        BasicAdapter<ItemT> {
 
     private val viewInflater: ViewInflater by inject()
 
@@ -26,7 +31,7 @@ abstract class BaseRecyclerAdapter<ViewT : View, ItemT>(private var items: Colle
 
     override fun getItemCount() = items.size
 
-    fun updateItems(items: Collection<ItemT>) {
+    override fun updateItems(items: Collection<ItemT>) {
         this.items = items
         notifyDataSetChanged()
     }

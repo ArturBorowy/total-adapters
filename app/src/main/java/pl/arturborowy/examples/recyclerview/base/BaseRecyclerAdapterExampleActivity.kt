@@ -5,10 +5,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_recycler.*
 import pl.arturborowy.R
+import pl.arturborowy.adapters.common.BasicAdapter
+import pl.arturborowy.util.extension.setAdapter
 
 class BaseRecyclerAdapterExampleActivity : AppCompatActivity() {
 
-    private val adapter = ExampleBaseRecyclerAdapter()
+    private val adapter: BasicAdapter<String> = ExampleBaseRecyclerAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,7 +21,7 @@ class BaseRecyclerAdapterExampleActivity : AppCompatActivity() {
 
     private fun initList() {
         list.layoutManager = LinearLayoutManager(this)
-        list.adapter = adapter
+        list.setAdapter(adapter)
 
         adapter.updateItems(getItems())
     }
