@@ -7,7 +7,7 @@ import org.koin.core.KoinComponent
 import org.koin.core.inject
 import pl.arturborowy.adapters.HasLayoutResId
 import pl.arturborowy.adapters.ViewStylist
-import pl.arturborowy.adapters.common.BasicAdapter
+import pl.arturborowy.adapters.common.UpdateItemsAdapter
 import pl.arturborowy.adapters.recyclerview.ViewHolder
 import pl.arturborowy.util.ViewInflater
 
@@ -17,7 +17,7 @@ abstract class BaseRecyclerAdapter<ViewT : View, ItemT>(private var items: Colle
         HasLayoutResId,
         ViewStylist<ViewT, ItemT>,
         KoinComponent,
-        BasicAdapter<ItemT> {
+        UpdateItemsAdapter<ItemT> {
 
     private val viewInflater: ViewInflater by inject()
 

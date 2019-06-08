@@ -7,7 +7,7 @@ import org.koin.core.KoinComponent
 import org.koin.core.inject
 import pl.arturborowy.adapters.HasLayoutResId
 import pl.arturborowy.adapters.ViewStylist
-import pl.arturborowy.adapters.common.BasicAdapter
+import pl.arturborowy.adapters.common.UpdateItemsAdapter
 import pl.arturborowy.util.ViewInflater
 
 abstract class BaseGridViewAdapter<ItemT, ViewT : View>(private var items: Collection<ItemT> =
@@ -16,7 +16,7 @@ abstract class BaseGridViewAdapter<ItemT, ViewT : View>(private var items: Colle
         HasLayoutResId,
         ViewStylist<ViewT, ItemT>,
         KoinComponent,
-        BasicAdapter<ItemT> {
+        UpdateItemsAdapter<ItemT> {
 
     private val viewInflater: ViewInflater by inject()
 

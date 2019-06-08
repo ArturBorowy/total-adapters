@@ -5,12 +5,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_recycler.*
 import pl.arturborowy.R
-import pl.arturborowy.adapters.common.BasicAdapter
+import pl.arturborowy.adapters.common.UpdateItemsAdapter
 import pl.arturborowy.util.extension.setAdapter
 
 class BaseRecyclerAdapterExampleActivity : AppCompatActivity() {
 
-    private val adapter: BasicAdapter<String> = ExampleBaseRecyclerAdapter()
+    private val adapter: UpdateItemsAdapter<String> = ExampleBaseRecyclerAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

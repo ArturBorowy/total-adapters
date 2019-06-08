@@ -1,12 +1,12 @@
 package pl.arturborowy.util.extension
 
 import androidx.recyclerview.widget.RecyclerView
-import pl.arturborowy.adapters.common.BasicAdapter
+import pl.arturborowy.adapters.common.UpdateItemsAdapter
 import timber.log.Timber
 
-fun RecyclerView.setAdapter(basicAdapter: BasicAdapter<*>) {
+fun RecyclerView.setAdapter(updateItemsAdapter: UpdateItemsAdapter<*>) {
     try {
-        adapter = basicAdapter as RecyclerView.Adapter<*>
+        adapter = updateItemsAdapter as RecyclerView.Adapter<*>
     } catch (exception: ClassCastException) {
         Timber.e("Tried to call recyclerView.setAdapter(...) with incorrect adapter type. ")
     }

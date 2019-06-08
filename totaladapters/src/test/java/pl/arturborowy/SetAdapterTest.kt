@@ -7,7 +7,7 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
 import pl.arturborowy.adapters.AdapterTest
-import pl.arturborowy.adapters.common.BasicAdapter
+import pl.arturborowy.adapters.common.UpdateItemsAdapter
 import pl.arturborowy.adapters.recyclerview.base.BaseRecyclerAdapter
 import pl.arturborowy.util.extension.setAdapter
 
@@ -18,7 +18,7 @@ internal class SetAdapterTest : AdapterTest() {
 
     @Test
     fun `setAdapter sets adapter`() {
-        val correctTypeAdapter: BasicAdapter<String> = getBaseRecyclerAdapter()
+        val correctTypeAdapter: UpdateItemsAdapter<String> = getBaseRecyclerAdapter()
 
         recyclerView.setAdapter(correctTypeAdapter)
 
@@ -35,7 +35,7 @@ internal class SetAdapterTest : AdapterTest() {
 
     @Test
     fun `setAdapter doesn't set adapter if given adapter has incorrect type`() {
-        val incorrectTypeAdapter = object : BasicAdapter<String> {
+        val incorrectTypeAdapter = object : UpdateItemsAdapter<String> {
             override fun updateItems(items: Collection<String>) {}
         }
 
