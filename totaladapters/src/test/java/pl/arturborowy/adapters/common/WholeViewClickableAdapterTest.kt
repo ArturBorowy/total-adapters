@@ -52,6 +52,9 @@ internal class WholeViewClickableAdapterTest : AdapterTest() {
 
     private fun getWholeViewClickableAdapter() =
             object : WholeClickableViewStylist<View, String> {
+                override fun updateItems(items: Collection<String>) {
+                }
+
                 override var onItemClickAction: (String, Int) -> Unit = EmptyMethod.twoArguments()
             }
 

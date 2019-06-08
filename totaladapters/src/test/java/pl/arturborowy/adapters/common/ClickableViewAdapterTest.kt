@@ -28,6 +28,9 @@ internal class ClickableViewAdapterTest : AdapterTest() {
 
     private fun getClickableViewAdapter() =
             object : OnItemListenerHolder<String> {
+                override fun updateItems(items: Collection<String>) {
+                }
+
                 override var onItemClickAction: (String, Int) -> Unit = EmptyMethod.twoArguments()
             }
 }
