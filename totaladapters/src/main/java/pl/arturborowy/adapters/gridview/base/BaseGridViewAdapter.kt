@@ -7,11 +7,16 @@ import org.koin.core.KoinComponent
 import org.koin.core.inject
 import pl.arturborowy.adapters.HasLayoutResId
 import pl.arturborowy.adapters.ViewStylist
+import pl.arturborowy.adapters.common.BasicAdapter
 import pl.arturborowy.util.ViewInflater
 
 abstract class BaseGridViewAdapter<ItemT, ViewT : View>(private var items: Collection<ItemT> =
                                                                 listOf()) :
-        BaseAdapter(), HasLayoutResId, ViewStylist<ViewT, ItemT>, KoinComponent {
+        BaseAdapter(),
+        HasLayoutResId,
+        ViewStylist<ViewT, ItemT>,
+        KoinComponent,
+        BasicAdapter<ItemT> {
 
     private val viewInflater: ViewInflater by inject()
 
@@ -38,7 +43,7 @@ abstract class BaseGridViewAdapter<ItemT, ViewT : View>(private var items: Colle
 
     private fun createNewView(parent: ViewGroup) = viewInflater.inflate(getLayoutResId(), parent)
 
-    fun updateItems(items: Collection<ItemT>) {
+    override fun updateItems(items: Collection<ItemT>) {
         this.items = items
         notifyDataSetChanged()
     }
