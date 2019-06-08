@@ -27,7 +27,7 @@ class WholeViewClickableRecyclerAdapterExampleActivity : AppCompatActivity() {
         adapter.updateItems(getItems())
     }
 
-    private fun getItems() = resources.getStringArray(R.array.strings)
+    private fun getItems() = resources.getStringArray(R.array.strings).toList()
 
     private fun onItemClick(item: String, position: Int) =
             Toast.makeText(this, "$position. $item.", Toast.LENGTH_SHORT).show()

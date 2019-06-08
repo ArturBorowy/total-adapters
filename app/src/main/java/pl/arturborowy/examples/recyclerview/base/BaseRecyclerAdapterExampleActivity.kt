@@ -26,5 +26,5 @@ class BaseRecyclerAdapterExampleActivity : AppCompatActivity() {
         adapter.updateItems(getItems())
     }
 
-    private fun getItems() = resources.getStringArray(R.array.strings)
+    private fun getItems() = resources.getStringArray(R.array.strings).toList()
 }
