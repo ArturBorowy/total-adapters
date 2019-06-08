@@ -9,7 +9,7 @@ import org.robolectric.RobolectricTestRunner
 import pl.arturborowy.util.TestData
 
 @RunWith(RobolectricTestRunner::class)
-class TotalAdaptersTest {
+internal class TotalAdaptersTest {
 
     private val context = TestData.getContext()
 
