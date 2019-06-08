@@ -25,7 +25,7 @@ class BaseRecyclerAdapterExampleActivityTest {
         scenario.onActivity { activity ->
             val children = activity.list.children
 
-            for (i in 0 until items.size) {
+            for (i in 0 until children.count()) {
                 val child = children.elementAt(i) as TextView
                 val item = items[i]
 

@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_example_selector.*
 import org.jetbrains.anko.startActivity
 import pl.arturborowy.R
+import pl.arturborowy.examples.gridview.base.BaseGridViewAdapterExampleActivity
+import pl.arturborowy.examples.gridview.clickable.ClickableViewGridViewAdapterExampleActivity
+import pl.arturborowy.examples.gridview.wholeviewclickable.WholeViewClickableGridViewAdapterExampleActivity
 import pl.arturborowy.examples.recyclerview.base.BaseRecyclerAdapterExampleActivity
 import pl.arturborowy.examples.recyclerview.clickable.ClickableViewRecyclerAdapterExampleActivity
 import pl.arturborowy.examples.recyclerview.wholeviewclickable.WholeViewClickableRecyclerAdapterExampleActivity
@@ -50,9 +53,11 @@ class ExampleSelectorActivity : AppCompatActivity() {
                                     isClickableViewChecked: Boolean,
                                     isWholeViewClickableChecked: Boolean) {
         when {
-            isBaseChecked -> TODO()
-            isClickableViewChecked -> TODO()
-            isWholeViewClickableChecked -> TODO()
+            isBaseChecked -> startActivity<BaseGridViewAdapterExampleActivity>()
+            isClickableViewChecked ->
+                startActivity<ClickableViewGridViewAdapterExampleActivity>()
+            isWholeViewClickableChecked ->
+                startActivity<WholeViewClickableGridViewAdapterExampleActivity>()
         }
     }
 }
