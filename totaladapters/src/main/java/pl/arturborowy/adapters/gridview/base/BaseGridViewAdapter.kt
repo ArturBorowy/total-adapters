@@ -3,20 +3,13 @@ package pl.arturborowy.adapters.gridview.base
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
-import org.koin.core.KoinComponent
 import org.koin.core.inject
-import pl.arturborowy.adapters.HasLayoutResId
-import pl.arturborowy.adapters.ViewStylist
-import pl.arturborowy.adapters.common.UpdateItemsAdapter
+import pl.arturborowy.adapters.common.BasicAdapterContract
 import pl.arturborowy.util.ViewInflater
 
 abstract class BaseGridViewAdapter<ItemT, ViewT : View>(private var items: Collection<ItemT> =
                                                                 listOf()) :
-        BaseAdapter(),
-        HasLayoutResId,
-        ViewStylist<ViewT, ItemT>,
-        KoinComponent,
-        UpdateItemsAdapter<ItemT> {
+        BaseAdapter(), BasicAdapterContract<ItemT, ViewT> {
 
     private val viewInflater: ViewInflater by inject()
 
