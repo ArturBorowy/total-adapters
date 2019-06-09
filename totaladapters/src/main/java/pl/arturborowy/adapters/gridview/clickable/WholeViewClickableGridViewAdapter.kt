@@ -3,6 +3,6 @@ package pl.arturborowy.adapters.gridview.clickable
 import android.view.View
 import pl.arturborowy.adapters.common.contracts.WholeClickableViewStylist
 
-abstract class WholeViewClickableGridViewAdapter<ViewT : View, ItemT>(
+abstract class WholeViewClickableGridViewAdapter<ItemT, ViewT : View>(
         items: Collection<ItemT> = listOf()) :
-        ClickableViewGridViewAdapter<ViewT, ItemT>(items), WholeClickableViewStylist<ViewT, ItemT>
+        ClickableViewGridViewAdapter<ItemT, ViewT>(items), WholeClickableViewStylist<ViewT, ItemT>

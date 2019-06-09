@@ -9,7 +9,7 @@ import pl.arturborowy.util.EmptyMethod
 
 internal class ClickableViewGridViewAdapterTest : AdapterTest() {
 
-    private lateinit var adapter: ClickableViewGridViewAdapter<TextView, String>
+    private lateinit var adapter: ClickableViewGridViewAdapter<String, TextView>
 
     @Before
     override fun setUp() {
@@ -22,7 +22,7 @@ internal class ClickableViewGridViewAdapterTest : AdapterTest() {
             Assert.assertEquals(EmptyMethod.twoArguments<String, Int>(), adapter.onItemClickAction)
 
     private fun getClickableViewGridViewAdapter() =
-            object : ClickableViewGridViewAdapter<TextView, String>() {
+            object : ClickableViewGridViewAdapter<String, TextView>() {
                 override fun getLayoutResId() = TODO()
 
                 override fun styleView(view: TextView, item: String, position: Int) =

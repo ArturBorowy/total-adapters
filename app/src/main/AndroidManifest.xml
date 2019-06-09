@@ -27,6 +27,12 @@
 
         <activity android:name=".examples.recyclerview.wholeviewclickable.WholeViewClickableRecyclerAdapterExampleActivity" />
 
+        <activity android:name=".examples.gridview.base.BaseGridViewAdapterExampleActivity" />
+
+        <activity android:name=".examples.gridview.clickable.ClickableViewGridViewAdapterExampleActivity" />
+
+        <activity android:name=".examples.gridview.wholeviewclickable.WholeViewClickableGridViewAdapterExampleActivity" />
+
     </application>
 
 </manifest>
