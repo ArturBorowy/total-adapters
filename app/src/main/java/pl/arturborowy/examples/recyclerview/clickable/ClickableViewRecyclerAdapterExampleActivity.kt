@@ -6,10 +6,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_recycler.*
 import pl.arturborowy.R
+import pl.arturborowy.adapters.common.interfaces.ClickableViewAdapter
+import pl.arturborowy.util.extension.setAdapter
 
 class ClickableViewRecyclerAdapterExampleActivity : AppCompatActivity() {
 
-    private val adapter = ExampleClickableViewRecyclerAdapter()
+    private val adapter: ClickableViewAdapter<String> = ExampleClickableViewRecyclerAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,7 +22,7 @@ class ClickableViewRecyclerAdapterExampleActivity : AppCompatActivity() {
 
     private fun initList() {
         list.layoutManager = LinearLayoutManager(this)
-        list.adapter = adapter
+        list.setAdapter(adapter)
 
         adapter.updateItems(getItems())
         adapter.setOnItemClickListener { item, position -> onItemClick(item, position) }
