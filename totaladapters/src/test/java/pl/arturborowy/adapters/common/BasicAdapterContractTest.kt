@@ -13,6 +13,7 @@ import org.mockito.Mockito
 import org.mockito.junit.MockitoJUnitRunner
 import pl.arturborowy.R
 import pl.arturborowy.exceptions.AdapterViewTypeMismatchException
+import pl.arturborowy.adapters.common.contracts.BasicAdapterContract
 import pl.arturborowy.util.TestData
 import pl.arturborowy.util.ViewInflater
 

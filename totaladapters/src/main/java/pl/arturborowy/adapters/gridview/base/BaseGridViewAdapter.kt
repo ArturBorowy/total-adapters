@@ -4,7 +4,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import org.koin.core.inject
-import pl.arturborowy.adapters.common.BasicAdapterContract
+import pl.arturborowy.adapters.common.contracts.BasicAdapterContract
 import pl.arturborowy.util.ViewInflater
 
 abstract class BaseGridViewAdapter<ItemT, ViewT : View>(override var items: Collection<ItemT> =

@@ -6,10 +6,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_recycler.*
 import pl.arturborowy.R
+import pl.arturborowy.adapters.common.interfaces.ClickableViewAdapter
+import pl.arturborowy.util.extension.setAdapter
 
 class WholeViewClickableRecyclerAdapterExampleActivity : AppCompatActivity() {
 
-    private val adapter = ExampleWholeViewClickableRecyclerAdapter()
+    private val adapter: ClickableViewAdapter<String> = ExampleWholeViewClickableRecyclerAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,12 +24,12 @@ class WholeViewClickableRecyclerAdapterExampleActivity : AppCompatActivity() {
         adapter.setOnItemClickListener { item, position -> onItemClick(item, position) }
 
         list.layoutManager = LinearLayoutManager(this)
-        list.adapter = adapter
+        list.setAdapter(adapter)
 
         adapter.updateItems(getItems())
     }
 
-    private fun getItems() = resources.getStringArray(R.array.strings)
+    private fun getItems() = resources.getStringArray(R.array.strings).toList()
 
     private fun onItemClick(item: String, position: Int) =
             Toast.makeText(this, "$position. $item.", Toast.LENGTH_SHORT).show()

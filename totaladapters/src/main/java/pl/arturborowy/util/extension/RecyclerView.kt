@@ -1,7 +1,7 @@
 package pl.arturborowy.util.extension
 
 import androidx.recyclerview.widget.RecyclerView
-import pl.arturborowy.adapters.common.UpdateItemsAdapter
+import pl.arturborowy.adapters.common.interfaces.UpdateItemsAdapter
 import timber.log.Timber
 
 fun RecyclerView.setAdapter(updateItemsAdapter: UpdateItemsAdapter<*>) {
