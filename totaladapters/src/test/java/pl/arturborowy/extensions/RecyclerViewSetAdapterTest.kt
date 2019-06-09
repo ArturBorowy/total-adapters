@@ -18,7 +18,7 @@ internal class RecyclerViewSetAdapterTest : AdapterTest() {
     private val recyclerView = RecyclerView(context)
 
     @Test
-    fun `setAdapter sets adapter`() {
+    fun `setAdapter sets adapter if given adapter has correct type`() {
         val correctTypeAdapter: UpdateItemsAdapter<String> = getBaseRecyclerAdapter()
 
         recyclerView.setAdapter(correctTypeAdapter)
