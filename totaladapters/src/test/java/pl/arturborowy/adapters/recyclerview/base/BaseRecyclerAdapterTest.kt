@@ -39,7 +39,7 @@ internal class BaseRecyclerAdapterTest : AdapterTest() {
         val givenParent = FrameLayout(context)
         val inflatedView = View(context)
 
-        given(mockViewInflater.inflate(spyAdapter.getLayoutResId(), givenParent))
+        given(mockViewInflater.inflateToType<View>(spyAdapter.getLayoutResId(), givenParent))
                 .willReturn(inflatedView)
 
         val actualViewHolder = spyAdapter.onCreateViewHolder(givenParent, 0)

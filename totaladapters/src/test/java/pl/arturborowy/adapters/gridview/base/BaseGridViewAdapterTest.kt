@@ -75,7 +75,7 @@ internal class BaseGridViewAdapterTest : AdapterTest() {
     fun `getView with bad type convertView inflates view in viewInflater`() {
         val givenView = TextView(context)
 
-        given(mockViewInflater.inflate(eq(adapter.getLayoutResId()), any(), any()))
+        given(mockViewInflater.inflateToType<TextView>(eq(adapter.getLayoutResId()), any(), any()))
                 .willReturn(givenView)
 
         val badTypeConvertView = ImageView(context)
@@ -87,7 +87,7 @@ internal class BaseGridViewAdapterTest : AdapterTest() {
     fun `getView with null convertView inflates view in viewInflater`() {
         val givenView = TextView(context)
 
-        given(mockViewInflater.inflate(eq(adapter.getLayoutResId()), any(), any()))
+        given(mockViewInflater.inflateToType<TextView>(eq(adapter.getLayoutResId()), any(), any()))
                 .willReturn(givenView)
 
         val actualView = adapter.getView(0, null, FrameLayout(context))
@@ -124,7 +124,7 @@ internal class BaseGridViewAdapterTest : AdapterTest() {
             view.setBackgroundColor(givenColor)
         }
 
-        given(mockViewInflater.inflate(eq(adapter.getLayoutResId()), any(), any()))
+        given(mockViewInflater.inflateToType<TextView>(eq(adapter.getLayoutResId()), any(), any()))
                 .willReturn(TextView(context))
 
         val actualView =
