@@ -4,7 +4,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import org.koin.core.inject
-import pl.arturborowy.adapters.common.BasicAdapterContract
+import pl.arturborowy.adapters.common.contracts.BasicAdapterContract
 import pl.arturborowy.adapters.recyclerview.ViewHolder
 import pl.arturborowy.util.ViewInflater
 

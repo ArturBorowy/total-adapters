@@ -1,4 +1,4 @@
-package pl.arturborowy.adapters.common
+package pl.arturborowy.adapters.common.interfaces
 
 interface UpdateItemsAdapter<ItemT> {
 

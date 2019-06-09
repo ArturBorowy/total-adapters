@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_recycler.*
 import pl.arturborowy.R
-import pl.arturborowy.adapters.common.UpdateItemsAdapter
+import pl.arturborowy.adapters.common.interfaces.UpdateItemsAdapter
 import pl.arturborowy.util.extension.setAdapter
 
 class BaseRecyclerAdapterExampleActivity : AppCompatActivity() {
@@ -26,5 +26,5 @@ class BaseRecyclerAdapterExampleActivity : AppCompatActivity() {
         adapter.updateItems(getItems())
     }
 
-    private fun getItems() = resources.getStringArray(R.array.strings)
+    private fun getItems() = resources.getStringArray(R.array.strings).toList()
 }
