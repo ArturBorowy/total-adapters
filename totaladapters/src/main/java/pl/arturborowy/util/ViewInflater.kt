@@ -7,6 +7,14 @@ import androidx.annotation.LayoutRes
 
 internal class ViewInflater {
 
-    fun inflate(@LayoutRes layoutResId: Int, parent: ViewGroup, attachToRoot: Boolean = false): View =
+    @Throws(ClassCastException::class)
+    fun <ViewT : View> inflateToType(@LayoutRes layoutResId: Int,
+                                     parent: ViewGroup,
+                                     attachToRoot: Boolean = false) =
+            inflate(layoutResId, parent, attachToRoot) as ViewT
+
+    fun inflate(@LayoutRes layoutResId: Int,
+                parent: ViewGroup,
+                attachToRoot: Boolean = false): View =
             LayoutInflater.from(parent.context).inflate(layoutResId, parent, attachToRoot)
 }

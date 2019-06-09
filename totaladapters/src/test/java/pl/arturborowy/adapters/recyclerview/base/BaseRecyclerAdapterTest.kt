@@ -23,7 +23,7 @@ internal class BaseRecyclerAdapterTest : AdapterTest() {
     }
 
     @Test
-    fun `notifyDataSetChanged (object) invoke calls notifyDataSetChanged() method`() {
+    fun `lambda notifyDataSetChanged invocation calls notifyDataSetChanged() from RecyclerView Adapter`() {
         adapter = spy(adapter)
 
         adapter.notifyDataSetChanged()

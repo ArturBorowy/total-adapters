@@ -12,6 +12,7 @@ import org.junit.runner.RunWith
 import org.mockito.Mockito
 import org.mockito.junit.MockitoJUnitRunner
 import pl.arturborowy.R
+import pl.arturborowy.exceptions.AdapterViewTypeMismatchException
 import pl.arturborowy.adapters.common.contracts.BasicAdapterContract
 import pl.arturborowy.util.TestData
 import pl.arturborowy.util.ViewInflater
@@ -46,18 +47,27 @@ class BasicAdapterContractTest {
     }
 
     @Test
-    fun `createNewView calls inflate on given ViewInflater with parent from argument`() {
+    fun `createNewView calls inflateToType on given ViewInflater`() {
         val mockViewInflater: ViewInflater = mock()
 
         val givenMockParent: ViewGroup = mock()
 
-        given(mockViewInflater.inflate(layoutResId, givenMockParent))
-                .willReturn(mock<TextView>())
-
         basicAdapterContract.createNewView(mockViewInflater, givenMockParent)
 
         Mockito.verify(mockViewInflater, Mockito.times(1))
-                .inflate(layoutResId, givenMockParent)
+                .inflateToType<TextView>(layoutResId, givenMockParent)
+    }
+
+    @Test(expected = AdapterViewTypeMismatchException::class)
+    fun `createNewView throws AdapterViewTypeMismatchException when viewInflater throws ClassCastException`() {
+        val mockViewInflater: ViewInflater = mock()
+
+        val givenMockParent: ViewGroup = mock()
+
+        given(mockViewInflater.inflateToType<TextView>(layoutResId, givenMockParent))
+                .willThrow(ClassCastException())
+
+        basicAdapterContract.createNewView(mockViewInflater, givenMockParent)
     }
 
     @Test
