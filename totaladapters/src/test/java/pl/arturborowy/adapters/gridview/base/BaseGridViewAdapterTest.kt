@@ -26,7 +26,7 @@ internal class BaseGridViewAdapterTest : AdapterTest() {
     }
 
     @Test
-    fun `lambda notifyDataSetChanged invoke calls notifyDataSetChanged() from BaseAdapter`() {
+    fun `lambda notifyDataSetChanged invocation calls notifyDataSetChanged() from BaseAdapter`() {
         adapter = spy(adapter)
 
         adapter.notifyDataSetChanged()
