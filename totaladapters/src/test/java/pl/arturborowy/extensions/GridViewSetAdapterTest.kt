@@ -18,7 +18,7 @@ internal class GridViewSetAdapterTest : AdapterTest() {
     private val gridView = GridView(context)
 
     @Test
-    fun `setAdapter sets adapter`() {
+    fun `setAdapter sets adapter if given adapter has correct type`() {
         val correctTypeAdapter: UpdateItemsAdapter<String> = getBaseGridViewAdapter()
 
         gridView.setAdapter(correctTypeAdapter)
