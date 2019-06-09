@@ -7,6 +7,7 @@ import org.koin.core.context.startKoin
 import org.koin.core.context.stopKoin
 import org.koin.dsl.module
 import pl.arturborowy.util.ViewInflater
+import timber.log.Timber
 
 object TotalAdapters {
 
@@ -14,12 +15,27 @@ object TotalAdapters {
     internal var applicationModule = module { single { ViewInflater() } }
 
     fun init(context: Context) {
+        val applicationContext = context.applicationContext
+
+        initLogger()
+        initServiceLocator(applicationContext)
+    }
+
+    private fun initLogger() {
+        if (BuildConfig.DEBUG) {
+            Timber.plant(Timber.DebugTree())
+        }
+    }
+
+    private fun initServiceLocator(applicationContext: Context) {
         startKoin {
             androidLogger()
-            androidContext(context.applicationContext)
+            androidContext(applicationContext)
             modules(applicationModule)
         }
     }
 
-    fun destroy() = stopKoin()
+    fun destroy() = destroyServiceLocator()
+
+    private fun destroyServiceLocator() = stopKoin()
 }
