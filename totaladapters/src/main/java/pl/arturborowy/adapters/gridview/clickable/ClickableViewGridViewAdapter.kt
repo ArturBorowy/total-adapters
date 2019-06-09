@@ -5,7 +5,7 @@ import pl.arturborowy.adapters.common.ClickableViewAdapter
 import pl.arturborowy.adapters.recyclerview.base.BaseRecyclerAdapter
 import pl.arturborowy.util.EmptyMethod
 
-internal abstract class ClickableViewGridViewAdapter<ViewT : View, ItemT>(items: Collection<ItemT> =
+abstract class ClickableViewGridViewAdapter<ViewT : View, ItemT>(items: Collection<ItemT> =
                                                                                   listOf()) :
         BaseRecyclerAdapter<ViewT, ItemT>(items), ClickableViewAdapter<ItemT> {
 
