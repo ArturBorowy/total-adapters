@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import org.koin.core.KoinComponent
 import pl.arturborowy.adapters.HasLayoutResId
 import pl.arturborowy.adapters.ViewStylist
+import pl.arturborowy.exceptions.AdapterViewTypeMismatchException
 import pl.arturborowy.util.ViewInflater
 
 internal interface BasicAdapterContract<ItemT, ViewT : View> :
@@ -20,7 +21,11 @@ internal interface BasicAdapterContract<ItemT, ViewT : View> :
     }
 
     fun createNewView(viewInflater: ViewInflater, parent: ViewGroup) =
-            viewInflater.inflate(getLayoutResId(), parent) as ViewT
+            try {
+                viewInflater.inflateToType<ViewT>(getLayoutResId(), parent)
+            } catch (exception: ClassCastException) {
+                throw AdapterViewTypeMismatchException()
+            }
 
     fun getItemAt(position: Int) = items.elementAt(position)
 
