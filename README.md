@@ -12,7 +12,7 @@ Add **total-adapters** dependency to your module level **build.gradle**:
 
 ```
 dependencies {
-        implementation 'com.github.ArturBorowy:total-adapters:0.1.0'
+        implementation 'com.github.ArturBorowy:total-adapters:0.1.1'
 }
 ```
 
