@@ -2,7 +2,6 @@ package pl.arturborowy.examples.recyclerview.base
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_recycler.*
 import pl.arturborowy.R
 import pl.arturborowy.adapters.common.interfaces.UpdateItemsAdapter
@@ -20,7 +19,6 @@ class BaseRecyclerAdapterExampleActivity : AppCompatActivity() {
     }
 
     private fun initList() {
-        list.layoutManager = LinearLayoutManager(this)
         list.setAdapter(adapter)
 
         adapter.updateItems(getItems())
