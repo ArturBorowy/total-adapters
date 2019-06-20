@@ -8,7 +8,7 @@ import org.koin.dsl.module
 import org.mockito.Mock
 import org.mockito.MockitoAnnotations
 import org.robolectric.RobolectricTestRunner
-import pl.arturborowy.MockTotalAdapters
+import pl.arturborowy.TestServiceLocator
 import pl.arturborowy.util.TestData
 import pl.arturborowy.util.ViewInflater
 
@@ -24,7 +24,7 @@ internal abstract class AdapterTest {
 
     @Before
     open fun setUp() {
-        MockTotalAdapters.init(context, module { single { mockViewInflater } })
+        TestServiceLocator.init(context, module { single { mockViewInflater } })
         MockitoAnnotations.initMocks(this)
     }
 
