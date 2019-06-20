@@ -24,9 +24,6 @@ internal class ViewInflaterTest {
 
     private val context = TestData.getContext()
 
-    @Before
-    fun setUp() = MockitoAnnotations.initMocks(this)
-
     @Test
     fun `inflateToType with same ViewT as givenLayout's top view type calls inflate with same arguments`() {
         val givenLayoutResId = R.layout.view
