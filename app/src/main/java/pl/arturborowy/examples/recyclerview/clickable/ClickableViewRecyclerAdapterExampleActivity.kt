@@ -3,7 +3,6 @@ package pl.arturborowy.examples.recyclerview.clickable
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_recycler.*
 import pl.arturborowy.R
 import pl.arturborowy.adapters.common.interfaces.ClickableViewAdapter
@@ -21,7 +20,6 @@ class ClickableViewRecyclerAdapterExampleActivity : AppCompatActivity() {
     }
 
     private fun initList() {
-        list.layoutManager = LinearLayoutManager(this)
         list.setAdapter(adapter)
 
         adapter.updateItems(getItems())
