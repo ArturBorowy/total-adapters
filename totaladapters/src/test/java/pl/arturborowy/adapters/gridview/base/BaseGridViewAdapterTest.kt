@@ -12,8 +12,8 @@ import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
 import org.mockito.Mockito
-import pl.arturborowy.R
 import pl.arturborowy.adapters.AdapterTest
+import pl.arturborowy.test.R
 
 internal class BaseGridViewAdapterTest : AdapterTest() {
 

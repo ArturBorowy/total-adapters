@@ -9,13 +9,11 @@ import com.nhaarman.mockito_kotlin.given
 import com.nhaarman.mockito_kotlin.mock
 import com.nhaarman.mockito_kotlin.spy
 import org.junit.Assert
-import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.Mockito
-import org.mockito.MockitoAnnotations
 import org.robolectric.RobolectricTestRunner
-import pl.arturborowy.R
+import pl.arturborowy.test.R
 
 @RunWith(RobolectricTestRunner::class)
 internal class ViewInflaterTest {

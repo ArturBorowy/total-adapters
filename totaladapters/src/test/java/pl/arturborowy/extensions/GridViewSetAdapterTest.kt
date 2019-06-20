@@ -6,10 +6,10 @@ import org.junit.Assert
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
-import pl.arturborowy.R
 import pl.arturborowy.adapters.AdapterTest
 import pl.arturborowy.adapters.common.interfaces.UpdateItemsAdapter
 import pl.arturborowy.adapters.gridview.base.BaseGridViewAdapter
+import pl.arturborowy.test.R
 import pl.arturborowy.util.extension.setAdapter
 
 @RunWith(RobolectricTestRunner::class)
