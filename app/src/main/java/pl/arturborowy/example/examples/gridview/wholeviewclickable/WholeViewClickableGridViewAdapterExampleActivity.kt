@@ -1,30 +1,29 @@
-package pl.arturborowy.examples.recyclerview.wholeviewclickable
+package pl.arturborowy.example.examples.gridview.wholeviewclickable
 
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_recycler.*
-import pl.arturborowy.R
+import kotlinx.android.synthetic.main.activity_grid_view.*
 import pl.arturborowy.adapters.common.interfaces.ClickableViewAdapter
+import pl.arturborowy.example.R
 import pl.arturborowy.util.extension.setAdapter
 
-class WholeViewClickableRecyclerAdapterExampleActivity : AppCompatActivity() {
+class WholeViewClickableGridViewAdapterExampleActivity : AppCompatActivity() {
 
-    private val adapter: ClickableViewAdapter<String> = ExampleWholeViewClickableRecyclerAdapter()
+    private val adapter: ClickableViewAdapter<String> = ExampleWholeViewClickableGridViewAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_recycler)
+        setContentView(R.layout.activity_grid_view)
 
-        initList()
+        initGridView()
     }
 
-    private fun initList() {
-        adapter.setOnItemClickListener { item, position -> onItemClick(item, position) }
-
-        list.setAdapter(adapter)
+    private fun initGridView() {
+        gridView.setAdapter(adapter)
 
         adapter.updateItems(getItems())
+        adapter.setOnItemClickListener { item, position -> onItemClick(item, position) }
     }
 
     private fun getItems() = resources.getStringArray(R.array.strings).toList()

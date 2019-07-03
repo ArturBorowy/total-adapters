@@ -1,4 +1,4 @@
-package pl.arturborowy.simple
+package pl.arturborowy.example.simple
 
 import android.app.Application
 import pl.arturborowy.TotalAdapters

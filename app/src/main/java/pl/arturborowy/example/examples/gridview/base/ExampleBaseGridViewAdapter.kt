@@ -1,8 +1,8 @@
-package pl.arturborowy.examples.gridview.base
+package pl.arturborowy.example.examples.gridview.base
 
 import android.widget.TextView
-import pl.arturborowy.R
 import pl.arturborowy.adapters.gridview.base.BaseGridViewAdapter
+import pl.arturborowy.example.R
 
 class ExampleBaseGridViewAdapter : BaseGridViewAdapter<String, TextView>() {
 

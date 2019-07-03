@@ -1,8 +1,8 @@
-package pl.arturborowy.examples.recyclerview.base
+package pl.arturborowy.example.examples.recyclerview.base
 
 import android.widget.TextView
-import pl.arturborowy.R
 import pl.arturborowy.adapters.recyclerview.base.BaseRecyclerAdapter
+import pl.arturborowy.example.R
 
 class ExampleBaseRecyclerAdapter : BaseRecyclerAdapter<TextView, String>() {
 

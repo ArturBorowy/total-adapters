@@ -1,16 +1,16 @@
-package pl.arturborowy.examples.gridview.wholeviewclickable
+package pl.arturborowy.example.examples.gridview.clickable
 
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_grid_view.*
-import pl.arturborowy.R
 import pl.arturborowy.adapters.common.interfaces.ClickableViewAdapter
+import pl.arturborowy.example.R
 import pl.arturborowy.util.extension.setAdapter
 
-class WholeViewClickableGridViewAdapterExampleActivity : AppCompatActivity() {
+class ClickableViewGridViewAdapterExampleActivity : AppCompatActivity() {
 
-    private val adapter: ClickableViewAdapter<String> = ExampleWholeViewClickableGridViewAdapter()
+    private val adapter: ClickableViewAdapter<String> = ExampleClickableViewGridViewAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

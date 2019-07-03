@@ -1,8 +1,8 @@
-package pl.arturborowy.examples.gridview.wholeviewclickable
+package pl.arturborowy.example.examples.gridview.wholeviewclickable
 
 import android.widget.TextView
-import pl.arturborowy.R
 import pl.arturborowy.adapters.gridview.clickable.WholeViewClickableGridViewAdapter
+import pl.arturborowy.example.R
 
 class ExampleWholeViewClickableGridViewAdapter :
         WholeViewClickableGridViewAdapter<String, TextView>() {
