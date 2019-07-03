@@ -1,16 +1,16 @@
-package pl.arturborowy.selector
+package pl.arturborowy.example.selector
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_example_selector.*
 import org.jetbrains.anko.startActivity
-import pl.arturborowy.R
-import pl.arturborowy.examples.gridview.base.BaseGridViewAdapterExampleActivity
-import pl.arturborowy.examples.gridview.clickable.ClickableViewGridViewAdapterExampleActivity
-import pl.arturborowy.examples.gridview.wholeviewclickable.WholeViewClickableGridViewAdapterExampleActivity
-import pl.arturborowy.examples.recyclerview.base.BaseRecyclerAdapterExampleActivity
-import pl.arturborowy.examples.recyclerview.clickable.ClickableViewRecyclerAdapterExampleActivity
-import pl.arturborowy.examples.recyclerview.wholeviewclickable.WholeViewClickableRecyclerAdapterExampleActivity
+import pl.arturborowy.example.R
+import pl.arturborowy.example.examples.gridview.base.BaseGridViewAdapterExampleActivity
+import pl.arturborowy.example.examples.gridview.clickable.ClickableViewGridViewAdapterExampleActivity
+import pl.arturborowy.example.examples.gridview.wholeviewclickable.WholeViewClickableGridViewAdapterExampleActivity
+import pl.arturborowy.example.examples.recyclerview.base.BaseRecyclerAdapterExampleActivity
+import pl.arturborowy.example.examples.recyclerview.clickable.ClickableViewRecyclerAdapterExampleActivity
+import pl.arturborowy.example.examples.recyclerview.wholeviewclickable.WholeViewClickableRecyclerAdapterExampleActivity
 
 class ExampleSelectorActivity : AppCompatActivity() {
 

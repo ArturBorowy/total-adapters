@@ -1,10 +1,10 @@
-package pl.arturborowy.examples.gridview.base
+package pl.arturborowy.example.examples.gridview.base
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_grid_view.*
-import pl.arturborowy.R
 import pl.arturborowy.adapters.common.interfaces.UpdateItemsAdapter
+import pl.arturborowy.example.R
 import pl.arturborowy.util.extension.setAdapter
 
 class BaseGridViewAdapterExampleActivity : AppCompatActivity() {

@@ -1,8 +1,8 @@
-package pl.arturborowy.examples.recyclerview.wholeviewclickable
+package pl.arturborowy.example.examples.recyclerview.wholeviewclickable
 
 import android.widget.TextView
-import pl.arturborowy.R
 import pl.arturborowy.adapters.recyclerview.clickable.WholeViewClickableRecyclerAdapter
+import pl.arturborowy.example.R
 
 class ExampleWholeViewClickableRecyclerAdapter :
         WholeViewClickableRecyclerAdapter<TextView, String>() {

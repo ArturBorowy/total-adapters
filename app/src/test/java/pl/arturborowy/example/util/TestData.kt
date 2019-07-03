@@ -1,4 +1,4 @@
-package pl.arturborowy.util
+package pl.arturborowy.example.util
 
 import android.app.Application
 import android.content.Context

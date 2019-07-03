@@ -1,11 +1,11 @@
-package pl.arturborowy.examples.recyclerview.clickable
+package pl.arturborowy.example.examples.recyclerview.clickable
 
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_recycler.*
-import pl.arturborowy.R
 import pl.arturborowy.adapters.common.interfaces.ClickableViewAdapter
+import pl.arturborowy.example.R
 import pl.arturborowy.util.extension.setAdapter
 
 class ClickableViewRecyclerAdapterExampleActivity : AppCompatActivity() {

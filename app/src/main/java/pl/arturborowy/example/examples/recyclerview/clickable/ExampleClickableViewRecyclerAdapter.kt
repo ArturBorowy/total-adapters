@@ -1,9 +1,9 @@
-package pl.arturborowy.examples.recyclerview.clickable
+package pl.arturborowy.example.examples.recyclerview.clickable
 
 import android.view.View
 import kotlinx.android.synthetic.main.item_with_info.view.*
-import pl.arturborowy.R
 import pl.arturborowy.adapters.recyclerview.clickable.ClickableViewRecyclerAdapter
+import pl.arturborowy.example.R
 
 class ExampleClickableViewRecyclerAdapter : ClickableViewRecyclerAdapter<View, String>() {
 

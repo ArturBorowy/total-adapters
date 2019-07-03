@@ -1,10 +1,10 @@
-package pl.arturborowy.examples.recyclerview.base
+package pl.arturborowy.example.examples.recyclerview.base
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_recycler.*
-import pl.arturborowy.R
 import pl.arturborowy.adapters.common.interfaces.UpdateItemsAdapter
+import pl.arturborowy.example.R
 import pl.arturborowy.util.extension.setAdapter
 
 class BaseRecyclerAdapterExampleActivity : AppCompatActivity() {

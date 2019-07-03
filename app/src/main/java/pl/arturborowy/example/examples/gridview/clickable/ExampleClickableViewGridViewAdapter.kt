@@ -1,9 +1,9 @@
-package pl.arturborowy.examples.gridview.clickable
+package pl.arturborowy.example.examples.gridview.clickable
 
 import android.view.View
 import kotlinx.android.synthetic.main.item_with_info.view.*
-import pl.arturborowy.R
 import pl.arturborowy.adapters.gridview.clickable.ClickableViewGridViewAdapter
+import pl.arturborowy.example.R
 
 class ExampleClickableViewGridViewAdapter : ClickableViewGridViewAdapter<String, View>() {
 
