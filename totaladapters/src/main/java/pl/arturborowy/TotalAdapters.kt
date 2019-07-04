@@ -14,14 +14,14 @@ object TotalAdapters {
     // Needed to replace the component with a test specific one
     internal var applicationModule = module { single { ViewInflater() } }
 
-    fun init(context: Context, isDebug : Boolean) {
+    fun init(context: Context, isDebug: Boolean) {
         val applicationContext = context.applicationContext
 
         initLogger(isDebug)
         initServiceLocator(applicationContext)
     }
 
-    private fun initLogger(isDebug : Boolean) {
+    private fun initLogger(isDebug: Boolean) {
         if (isDebug) {
             Timber.plant(Timber.DebugTree())
         }
